@@ -60,7 +60,7 @@ btnScrollTo.addEventListener('click', function (e) {
   // });
 
   section1.scrollIntoView({ behavior: 'smooth' });
-});
+}); /*
 /*
 // Lec 182 pg 58
 // Lec 183 Selecting, Creating and Deleting Elements
@@ -153,7 +153,7 @@ logo.classList.contains('c'); // not includes
 
 // Don't use (coz it overwrites all the other classes)
 logo.className = 'syed';
-*/
+*/ /*
 // lec 185
 
 const h1 = document.querySelector('h1');
@@ -169,3 +169,34 @@ setTimeout(() => h1.removeEventListener('mouseenter', alerh1), 7000);
 // h1.onmouseenter = function (e) {
 //   alert('addEventListener: Great! You are reading the heading :D');
 // };
+*/ /*
+// lec 187 pg no 59
+// lec 188 Event Propagation
+
+// rgb(255,255,255)
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)} )`;
+console.log(randomColor(0, 255));
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log(`LINK`, e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+
+  // Stop propogatione
+  // e.stopPropagation();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log(`CONTAINER`, e.target, e.currentTarget);
+});
+
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log(`NAV`, e.target, e.currentTarget);
+});
+*/
