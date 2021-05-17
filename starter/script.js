@@ -154,3 +154,18 @@ logo.classList.contains('c'); // not includes
 // Don't use (coz it overwrites all the other classes)
 logo.className = 'syed';
 */
+// lec 185
+
+const h1 = document.querySelector('h1');
+const alerh1 = function (e) {
+  alert('addEventListener: Great! You are reading the heading :D');
+};
+
+h1.addEventListener('mouseenter', alerh1);
+
+setTimeout(() => h1.removeEventListener('mouseenter', alerh1), 7000);
+
+// don't use (use addEventListener)
+// h1.onmouseenter = function (e) {
+//   alert('addEventListener: Great! You are reading the heading :D');
+// };
